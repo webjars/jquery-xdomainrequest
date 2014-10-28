@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery-xdomainrequest</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <name>jquery-xdomainrequest</name>
     <description>Automatic Cross Origin Resource Sharing support using the XDomainRequest object for IE8 and IE9 when using the $.ajax function in jQuery 1.5+</description>
     <url>http://webjars.org</url>
@@ -50,7 +50,7 @@
         <url>http://github.com/webjars/jquery-xdomainrequest</url>
         <connection>scm:git:https://github.com/webjars/jquery-xdomainrequest.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/jquery-xdomainrequest.git</developerConnection>
-        <tag>jquery-xdomainrequest-1.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <dependencies>
