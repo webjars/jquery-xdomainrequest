@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery-xdomainrequest</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>jquery-xdomainrequest</name>
     <description>Automatic Cross Origin Resource Sharing support using the XDomainRequest object for IE8 and IE9 when using the $.ajax function in jQuery 1.5+</description>
     <url>http://webjars.org</url>
@@ -19,13 +19,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>1.0.2</upstream.version>
-        <upstream.url>http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js</upstream.url>
+        <upstream.url>http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/${upstream.version}/jquery.xdomainrequest.min.js</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
                 "paths": {
                     "jquery-xdomainrequest": "jquery-xdomainrequest"
-                },
+                }
             }
         </requirejs>
     </properties>
@@ -75,11 +75,8 @@
                         <configuration>
                             <target>
                                 <echo message="download source file" />
-                                <get src="${upstream.url}" dest="${project.build.directory}" />
-                                <echo message="moving resources" />
-                                <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}" />
-                                </move>
+                                <mkdir dir="${destDir}" />
+                                <get src="${upstream.url}" dest="${destDir}" />
                             </target>
                         </configuration>
                     </execution>
